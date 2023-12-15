@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Div Renk Değiştirme</title>
 
-<style>
-.box2 {
-    width: 110px;
-    margin-right: 20px;
-    margin-left: 20px;
-    height: 130px;
-    background-color: rgb(152, 121, 56);
-    clip-path: polygon(57% 5%, 12% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
-    transform: skew(7deg, 0deg);
-}
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Renk Değiştirme</title>
+
+    <style>
+        .box2 {
+            width: 110px;
+            margin-right: 20px;
+            margin-left: 20px;
+            height: 130px;
+            background-color: rgb(152, 121, 56);
+            clip-path: polygon(57% 5%, 12% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
+            transform: skew(7deg, 0deg);
+        }
+    </style>
 
 </head>
+
 <body>
 
     <div class="pads">
-        <div class="box2" id="myDivi"></div>
+        <div class="box2" id="myDivi" style="background-color:rgb(152, 121, 56);"></div>
     </div>
     <div class="pads2">
-        <div class="box2222" id="gizleButton" >CCCC</div>
+        <div class="box2222" id="gizleButton">CCCC</div>
     </div>
 
 
 
-    <script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const roButton = document.getElementById('kare8');
+    var g = document.getElementById('gameScreen');
+    var isBackgroundImageChanged = false;
 
-
-        document.getElementById('gizleButton').addEventListener('click', function() {
-            var b = document.getElementById("myDivi");
-            if (b.style.backgroundColor !== "rgb(152, 121, 56)") {
-                b.style.backgroundColor = "rgb(52, 152, 219)";
-            } else {
-                b.style.backgroundColor = "rgb(152, 121, 56)";
-            }
-        });
-    
-    </script>
+    roButton.addEventListener('click', function(){
+        if(!isBackgroundImageChanged){
+            g.style.backgroundImage = "url('./untitled2.png')";
+            isBackgroundImageChanged = true;
+        } else {
+            g.style.backgroundImage = "url('./untitled1.png')";
+            isBackgroundImageChanged = false;
+        }
+    });
+});
+</script>
 
 </body>
+
 </html>
