@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Div Renk Değiştirme</title>
+
+<style>
+.box2 {
+    width: 110px;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 130px;
+    clip-path: polygon(57% 5%, 12% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
+    transform: skew(7deg, 0deg);
+}
+</style>
+
+</head>
+<body>
+
+    <div class="pads">
+		<!--YOU MUST USE INLINE CSS-->
+        <div class="box2" id="myDivi" style="background-color: rgb(152, 121, 56);"></div>
+    </div>
+    <div class="pads2">
+        <div class="box2222" id="gizleButton" >Change Color</div>
+    </div>
+
+
+
+    <script>
+        const myDivi = document.getElementById('myDivi');
+        var g = document.getElementById('gizleButton');
+
+        g.addEventListener("click", function () {
+            if (myDivi.style.backgroundColor === 'rgb(152, 121, 56)') {
+                myDivi.style.backgroundColor = "rgb(52, 152, 219)";
+            } else {
+                myDivi.style.backgroundColor = "rgb(152, 121, 56)";
+            }
+        });
+    
+    </script>
+
+</body>
+</html>
